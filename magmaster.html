@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MagMaster Dataset | Alloy Theory Laboratory</title>
+    <meta name="description" content="Interactive MagMaster dataset of structural properties for binary magnesium compounds calculated using large-scale DFT and machine-learning integration.">
+
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="MagMaster Dataset">
+    <meta property="og:description" content="Search and download structural-property data for binary magnesium compounds.">
+    <meta property="og:type" content="dataset">
+
+    <!-- Your existing stylesheet -->
+    <link rel="stylesheet" href="site.css">
+
+    <!-- Google Analytics (optional) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FSVHR3P86E"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-FSVHR3P86E');
+    </script>
+
+    <!-- Minimal table styling (adjust as needed) -->
+    <style>
+        #table-container {
+            overflow-x: auto;
+            margin-top: 1em;
+        }
+        table.dataset-table {
+            border-collapse: collapse;
+            width: 100%;
+            min-width: 1200px;
+        }
+        table.dataset-table th, table.dataset-table td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: left;
+            white-space: nowrap;
+        }
+        table.dataset-table th {
+            background: #f5f7fa;
+            color: #0a4d8c;
+            font-weight: bold;
+        }
+        table.dataset-table tr:nth-child(even) {
+            background: #fafbfc;
+        }
+        table.dataset-table tr:hover {
+            background: #f0f4f8;
+        }
+        .error-message {
+            color: #d00;
+            padding: 1em;
+            background: #fee;
+            border-radius: 4px;
+            margin: 1em 0;
+        }
+        .notice {
+            padding: 1em;
+            color: #666;
+        }
+    </style>
+</head>
+<body data-page="data">
+    <div data-site-header></div>
+
+    <main id="main-content">
+        <section class="page-hero">
+            <div class="section-inner">
+                <p class="eyebrow">Interactive dataset</p>
+                <h1>MagMaster</h1>
+                <p class="lead">Structural properties of binary magnesium compounds from large-scale density functional theory calculations and machine-learning integration.</p>
+                <div class="button-row">
+                    <a class="button" href="data/MagMaster.csv" download>Download CSV</a>
+                    <a class="button secondary" href="data.html">Back to Data</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <div class="section-inner">
+                <div class="card">
+                    <p class="eyebrow">Suggested citation</p>
+                    <p><strong>Sharma, P., Akram, B., Bannerjee, T., Singh, P., and Balasubramanian, G. (2025).</strong> <em>MagMaster: Mapping structural properties of binary magnesium compounds using accurate large-scale DFT and machine learning integration.</em></p>
+                    <p class="page-intro">Update this citation with the journal, DOI, dataset version, and license when the final bibliographic record is available.</p>
+                </div>
+
+                <div class="dataset-search">
+                    <label class="visually-hidden" for="formula-search">Search the MagMaster dataset</label>
+                    <input id="formula-search" type="search" placeholder="Search by formula, element, structure, or any table value">
+                    <select id="page-size" aria-label="Rows per page">
+                        <option value="25">25 rows</option>
+                        <option value="50" selected>50 rows</option>
+                        <option value="100">100 rows</option>
+                        <option value="250">250 rows</option>
+                    </select>
+                </div>
+
+                <p class="result-meta" id="dataset-stats" aria-live="polite">Loading dataset…</p>
+                <div id="table-container"><div class="notice">Loading <code>data/MagMaster.csv</code>…</div></div>
+                <div class="pagination" id="dataset-pagination" hidden>
+                    <button class="button small secondary" id="previous-page" type="button">Previous</button>
+                    <span id="page-indicator"></span>
+                    <button class="button small secondary" id="next-page" type="button">Next</button>
+                </div>
+                <noscript><p class="error-message">JavaScript is required for the interactive dataset viewer. The CSV can still be downloaded using the button above.</p></noscript>
+            </div>
+        </section>
+    </main>
+
+    <div data-site-footer></div>
+
+    <!-- PapaParse CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+    <!-- Optional: site.js for header/footer. If it causes conflicts, temporarily remove this line -->
+    <script src="site.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.getElementById('formula-search');
+            const pageSizeSelect = document.getElementById('page-size');
+            const statsEl = document.getElementById('dataset-stats');
+            const tableContainer = document.getElementById('table-container');
+            const paginationDiv = document.getElementById('dataset-pagination');
+            const prevBtn = document.getElementById('previous-page');
+            const nextBtn = document.getElementById('next-page');
+            const pageIndicator = document.getElementById('page-indicator');
+
+            let allData = [];
+            let filteredData = [];
+            let currentPage = 1;
+            let pageSize = parseInt(pageSizeSelect.value, 10) || 50;
+
+            function escapeHtml(value) {
+                const div = document.createElement('div');
+                div.textContent = value;
+                return div.innerHTML;
+            }
+
+            function renderTable() {
+                const start = (currentPage - 1) * pageSize;
+                const end = Math.min(start + pageSize, filteredData.length);
+                const pageRows = filteredData.slice(start, end);
+
+                let html = '<div style="overflow-x:auto;"><table class="dataset-table">';
+                html += '<thead><tr>';
+                if (allData.length > 0) {
+                    Object.keys(allData[0]).forEach(key => {
+                        html += `<th>${escapeHtml(key)}</th>`;
+                    });
+                }
+                html += '</tr></thead><tbody>';
+                pageRows.forEach(row => {
+                    html += '<tr>';
+                    Object.values(row).forEach(value => {
+                        html += `<td>${escapeHtml(value)}</td>`;
+                    });
+                    html += '</tr>';
+                });
+                html += '</tbody></table></div>';
+                tableContainer.innerHTML = html;
+
+                const total = filteredData.length;
+                const showingStart = total === 0 ? 0 : start + 1;
+                const showingEnd = end;
+                statsEl.textContent = `Showing ${showingStart}–${showingEnd} of ${total} entries`;
+            }
+
+            function updatePagination() {
+                const totalPages = Math.ceil(filteredData.length / pageSize) || 1;
+                currentPage = Math.min(currentPage, totalPages);
+                currentPage = Math.max(1, currentPage);
+                pageIndicator.textContent = `Page ${currentPage} of ${totalPages}`;
+                prevBtn.disabled = currentPage <= 1;
+                nextBtn.disabled = currentPage >= totalPages;
+                paginationDiv.hidden = totalPages <= 1;
+            }
+
+            function applySearch() {
+                const query = searchInput.value.trim().toLowerCase();
+                if (query === '') {
+                    filteredData = allData.slice();
+                } else {
+                    filteredData = allData.filter(row => {
+                        return Object.values(row).some(value =>
+                            String(value).toLowerCase().includes(query)
+                        );
+                    });
+                }
+                currentPage = 1;
+                updatePagination();
+                renderTable();
+            }
+
+            // Load CSV using PapaParse (same method as the old working version)
+            console.log('Attempting to load data/MagMaster.csv via PapaParse...');
+            Papa.parse('data/MagMaster.csv', {
+                download: true,
+                header: true,
+                dynamicTyping: true,
+                skipEmptyLines: true,
+                complete: function(results) {
+                    console.log('PapaParse complete. Rows loaded:', results.data.length);
+                    if (results.errors && results.errors.length > 0) {
+                        console.warn('PapaParse warnings:', results.errors);
+                    }
+                    allData = results.data;
+                    filteredData = allData.slice();
+                    updatePagination();
+                    renderTable();
+                },
+                error: function(error) {
+                    console.error('PapaParse error:', error);
+                    tableContainer.innerHTML = `<div class="error-message">Error loading CSV file. Details: ${escapeHtml(error.message || 'Unknown error')}. <br>Make sure you are running this page from a web server (not file://).</div>`;
+                    statsEl.textContent = 'Failed to load dataset.';
+                }
+            });
+
+            // Event listeners
+            searchInput.addEventListener('input', applySearch);
+            pageSizeSelect.addEventListener('change', function () {
+                pageSize = parseInt(this.value, 10) || 50;
+                currentPage = 1;
+                updatePagination();
+                renderTable();
+            });
+            prevBtn.addEventListener('click', function () {
+                if (currentPage > 1) {
+                    currentPage--;
+                    updatePagination();
+                    renderTable();
+                }
+            });
+            nextBtn.addEventListener('click', function () {
+                const totalPages = Math.ceil(filteredData.length / pageSize) || 1;
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    updatePagination();
+                    renderTable();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
