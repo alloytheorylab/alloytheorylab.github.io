@@ -68,8 +68,8 @@
                             <a href="https://www.uwyo.edu/mechanical/faculty-staff/faculty/prince-sharma/index.html" target="_blank" rel="noopener noreferrer">UW Profile</a>
                             <a href="https://scholar.google.com/citations?hl=en&amp;user=YZE2WrEAAAAJ&amp;view_op=list_works&amp;sortby=pubdate" target="_blank" rel="noopener noreferrer">Google Scholar</a>
                             <a href="https://orcid.org/0000-0002-1833-8785" target="_blank" rel="noopener noreferrer">ORCID</a>
-                            <a href="https://github.com/pshatom/" target="_blank" rel="noopener noreferrer">GitHub</a>
-                            <a href="https://www.linkedin.com/in/pshatom/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                            <a href="https://github.com/alloytheorylab" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            <a href="https://www.linkedin.com/in/leaper96/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                         </nav>
                     </div>
                 </div>
@@ -92,7 +92,7 @@
             const source = image.getAttribute("src") || "";
             if (!source || source.startsWith("http") || image.dataset.fallbackTried) return;
             image.dataset.fallbackTried = "true";
-            image.src = `https://pshatom.github.io/${source.replace(/^\.\//, "")}`;
+            image.src = `https://alloytheorylab.github.io/${source.replace(/^\.\//, "")}`;
         };
 
         if (image.complete && image.naturalWidth === 0) {

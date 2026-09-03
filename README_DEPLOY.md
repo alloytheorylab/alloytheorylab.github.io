@@ -1,6 +1,6 @@
 # Alloy Theory Laboratory website — deployment notes
 
-This package contains the redesigned HTML, CSS, and JavaScript files for the existing GitHub Pages repository at `pshatom.github.io`.
+This package contains the redesigned HTML, CSS, and JavaScript files for the GitHub Pages repository/site at `https://alloytheorylab.github.io/`.
 
 ## Install
 
