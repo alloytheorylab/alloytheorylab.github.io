@@ -61,7 +61,7 @@
                     <div class="footer-identity">
                         <strong>Alloy Theory Laboratory</strong>
                         <p>Prince Sharma · Assistant Professor</p>
-                        <p>Department of Mechanical Engineering · School of Energy Resources</p>
+                        <p>Department of Mechanical Engineering</p>
                         <a class="footer-email" href="mailto:psharma3@uwyo.edu">psharma3@uwyo.edu</a>
                         <nav class="footer-links" aria-label="Profile and resource links">
                             <a href="data.html">Code &amp; Data</a>

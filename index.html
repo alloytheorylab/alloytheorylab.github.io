@@ -33,20 +33,9 @@
       "jobTitle": "Assistant Professor of Mechanical Engineering",
       "url": "https://alloytheorylab.github.io/",
       "image": "https://alloytheorylab.github.io/Team/headshot.jpg",
-      "worksFor": {
-        "@type": "CollegeOrUniversity",
-        "name": "University of Wyoming",
-        "url": "https://www.uwyo.edu/"
-      },
-      "affiliation": {
-        "@type": "CollegeOrUniversity",
-        "name": "University of Wyoming",
-        "url": "https://www.uwyo.edu/"
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://alloytheorylab.github.io/"
-      },
+      "worksFor": {"@type": "CollegeOrUniversity","name": "University of Wyoming","url": "https://www.uwyo.edu/"},
+      "affiliation": {"@type": "CollegeOrUniversity","name": "University of Wyoming","url": "https://www.uwyo.edu/"},
+      "mainEntityOfPage": {"@type": "WebPage","@id": "https://alloytheorylab.github.io/"},
       "sameAs": [
         "https://www.uwyo.edu/mechanical/faculty-staff/faculty/prince-sharma/index.html",
         "https://orcid.org/0000-0002-1833-8785",
@@ -57,209 +46,83 @@
       ]
     }
     </script>
+    <style>
+      /* Very faint, numbers-only Budh watermark. Kept above page backgrounds and below the header. */
+      .yantra-watermark{position:fixed;inset:0;width:100vw;height:100vh;opacity:.005;pointer-events:none;z-index:90;color:#0a4d8c}
+      .yantra-watermark text{font-family:"Noto Sans Devanagari","Kohinoor Devanagari","Mangal",sans-serif;font-weight:700;fill:currentColor}
+    </style>
 </head>
 <body class="home-theme" data-page="home">
-    <div data-site-header></div>
+    <svg class="yantra-watermark" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <!-- Budh numerical yantra, magic constant 24; numbers only, in Devanagari. -->
+      <g font-size="118" text-anchor="middle">
+        <text x="230" y="220">५</text><text x="600" y="220">१०</text><text x="970" y="220">९</text>
+        <text x="230" y="500">१२</text><text x="600" y="500">८</text><text x="970" y="500">४</text>
+        <text x="230" y="780">७</text><text x="600" y="780">६</text><text x="970" y="780">११</text>
+      </g>
+    </svg>
 
+    <div data-site-header></div>
     <main id="main-content">
         <section class="hero-home" aria-labelledby="home-title">
             <div class="hero-copy">
                 <div class="hero-copy-inner">
                     <p class="eyebrow">Materials science across scales</p>
-                    <h1 id="home-title">Prince Sharma</h1>
-                    <p class="role-line">Assistant Professor · University of Wyoming</p>
-                    <p class="lead">Designing alloys and disordered materials for nuclear, high-temperature, and extreme environments through first-principles calculations, atomistic simulations, machine learning, and experiments.</p>
+                    <h1 id="home-title">Alloy Theory Lab</h1>
+                    <p class="role-line">Prince Sharma · Assistant Professor · University of Wyoming</p>
+                    <p class="lead">Materials for nuclear, aerospace, energy, and extreme environments. We study how composition, atomic structure, defects, interfaces, and lattice dynamics control the behavior of alloys and disordered materials.</p>
                     <div class="button-row">
                         <a class="button" href="research.html">Explore Research</a>
-                        <a class="button secondary" href="team.html#opportunities">Join the Team</a>
+                        <a class="button secondary" href="team.html">Meet the Team</a>
                         <a class="button secondary" href="projects.html">Publications</a>
                     </div>
                 </div>
             </div>
-
-<div class="hero-media" style="background: inherit;">
-    <img src="assets/alloy-g.gif" alt="Animated atomistic structure of a multicomponent alloy" style="background: none;">
-</div>
-
-
+            <div class="hero-media" style="background: inherit;"><img src="assets/alloy-g.gif" alt="Animated atomistic structure of a multicomponent alloy" style="background:none;"></div>
         </section>
 
         <section class="section-block" id="about">
             <div class="section-inner about-grid">
                 <img class="headshot" src="Team/headshot.jpg" alt="Dr. Prince Sharma">
                 <div class="about-copy">
-                    <p class="eyebrow">About me</p>
-                    <h2>Connecting atomic-scale physics with materials performance</h2>
-                    <p>I am an Assistant Professor in the Department of Mechanical Engineering and the School of Energy Resources at the University of Wyoming. My research integrates computational, data-driven, and experimental methods to understand and design materials for nuclear, energy, aerospace, and extreme environments.</p>
-                    <p>My work spans chemical disorder, phase stability, refractory and high-entropy materials, lattice dynamics, thermal transport, mechanical behavior, oxidation resistance, and radiation tolerance. I enjoy developing computational methods, synthesizing alloys, and working with interdisciplinary teams to connect theory with measurable materials behavior.</p>
-                    <p>Teaching and mentoring are central to my work. I aim to help students become independent researchers who can question assumptions, build useful models, and test ideas rigorously.</p>
-                    <div class="tag-list" aria-label="Research methods">
-                        <span class="tag">DFT</span>
-                        <span class="tag">Molecular Dynamics</span>
-                        <span class="tag">Machine Learning</span>
-                        <span class="tag">Lattice Dynamics</span>
-                        <span class="tag">Alloy Synthesis</span>
-                    </div>
+                    <p class="eyebrow">About</p>
+                    <h2>Alloy theory, computation, and experiments</h2>
+                    <p>I am an Assistant Professor in the Department of Mechanical Engineering at the University of Wyoming. My group studies refractory alloys, radiation effects, oxidation, chemical disorder, amorphization, interfaces, lattice dynamics, and transport.</p>
+                    <p>We combine first-principles calculations, molecular dynamics, machine-learning interatomic potentials, CALPHAD, alloy synthesis, and materials characterization to connect atomic-scale mechanisms with measurable materials response.</p>
+                    <div class="tag-list" aria-label="Research methods"><span class="tag">DFT</span><span class="tag">Molecular Dynamics</span><span class="tag">Machine Learning</span><span class="tag">Lattice Dynamics</span><span class="tag">Alloy Synthesis</span></div>
                     <div class="social-actions" aria-label="Professional profiles">
-                        <a class="social-action" href="mailto:psharma3@uwyo.edu">
-                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12h20V6a2 2 0 0 0-2-2Zm0 3.2-8 5-8-5V6l8 5 8-5v1.2Z"/></svg>
-                            Email
-                        </a>
-                        <a class="social-action" href="https://www.linkedin.com/in/leaper96/" target="_blank" rel="noopener noreferrer">
-                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8.2H3V21h3.5V8.2ZM4.75 3A2.04 2.04 0 1 0 4.75 7.08 2.04 2.04 0 0 0 4.75 3ZM21 13.65c0-3.85-2.05-5.64-4.79-5.64-2.2 0-3.19 1.21-3.74 2.06V8.3H8.98V21h3.49v-6.29c0-1.66.31-3.27 2.37-3.27 2.03 0 2.06 1.9 2.06 3.38V21H21v-7.35Z"/></svg>
-                            LinkedIn
-                        </a>
-                        <a class="social-action" href="https://scholar.google.com/citations?hl=en&amp;user=YZE2WrEAAAAJ&amp;view_op=list_works&amp;sortby=pubdate" target="_blank" rel="noopener noreferrer">
-                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 11 6-4 2.18V17h-2v-4.73L12 15 1 9l11-6Zm-7 9.18 7 3.82 7-3.82V17c0 2.21-3.13 4-7 4s-7-1.79-7-4v-4.82Z"/></svg>
-                            Google Scholar
-                        </a>
+                        <a class="social-action" href="mailto:psharma3@uwyo.edu">Email</a>
+                        <a class="social-action" href="https://www.linkedin.com/in/leaper96/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a class="social-action" href="https://scholar.google.com/citations?hl=en&amp;user=YZE2WrEAAAAJ&amp;view_op=list_works&amp;sortby=pubdate" target="_blank" rel="noopener noreferrer">Google Scholar</a>
                     </div>
-                    <div class="quote">
-                        <em>What is life, but elements in graceful array? What is death, but that order drifting away?</em><br>
-                        <small>English translation of lines by Chakbast Braj Narayan</small>
-                    </div>
+                    <div class="quote"><em>What is life, but elements in graceful array? What is death, but that order drifting away?</em><br><small>English translation of lines by Chakbast Braj Narayan</small></div>
                 </div>
             </div>
         </section>
 
-        <section class="section-block tint" id="education" aria-labelledby="education-title">
-            <div class="section-inner education-layout">
-                <div class="education-intro">
-                    <p class="eyebrow">Academic background</p>
-                    <h2 id="education-title">Education</h2>
-                </div>
-                <div class="degree-list">
-                    <article class="degree-item">
-                        <div class="degree-mark">Ph.D.</div>
-                        <div class="degree-copy">
-                            <h3>Mechanical Engineering and Mechanics</h3>
-                            <p><strong>Lehigh University</strong> · Bethlehem, Pennsylvania</p>
-                            <p class="degree-detail"><strong>Dissertation:</strong> Additives in Solid-Solutions: Understanding Structural Properties of Alloys From Electron &amp; Phonon Dynamics<br><strong>Advisor:</strong> Prof. Ganesh Balasubramanian</p>
-                        </div>
-                    </article>
-                    <article class="degree-item">
-                        <div class="degree-mark">M.Tech.</div>
-                        <div class="degree-copy">
-                            <h3>Materials Science</h3>
-                            <p><strong>Indian Institute of Technology Hyderabad</strong> · India</p>
-                        </div>
-                    </article>
-                    <article class="degree-item">
-                        <div class="degree-mark">B.E.</div>
-                        <div class="degree-copy">
-                            <h3>Mechanical Engineering</h3>
-                            <p><strong>SGSITS</strong> · Indore, India</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
+        <section class="section-block tint" id="education"><div class="section-inner education-layout"><div class="education-intro"><p class="eyebrow">Academic background</p><h2 id="education-title">Education</h2></div><div class="degree-list">
+          <article class="degree-item"><div class="degree-mark">Ph.D.</div><div class="degree-copy"><h3>Mechanical Engineering and Mechanics</h3><p><strong>Lehigh University</strong> · Bethlehem, Pennsylvania</p><p class="degree-detail"><strong>Dissertation:</strong> Additives in Solid-Solutions: Understanding Structural Properties of Alloys From Electron &amp; Phonon Dynamics<br><strong>Advisor:</strong> Prof. Ganesh Balasubramanian</p></div></article>
+          <article class="degree-item"><div class="degree-mark">M.Tech.</div><div class="degree-copy"><h3>Materials Science</h3><p><strong>Indian Institute of Technology Hyderabad</strong> · India</p></div></article>
+          <article class="degree-item"><div class="degree-mark">B.E.</div><div class="degree-copy"><h3>Mechanical Engineering</h3><p><strong>SGSITS</strong> · Indore, India</p></div></article>
+        </div></div></section>
 
-        <section class="section-block alt" aria-labelledby="research-glance-title">
-            <div class="section-inner">
-                <div class="section-heading">
-                    <p class="eyebrow">Research at a glance</p>
-                    <h2 id="research-glance-title">Research areas</h2>
-                    <p>Four connected questions link atomic-scale mechanisms to materials that must perform under demanding conditions.</p>
-                </div>
-                <div class="card-grid four">
-                    <article class="card">
-                        <span class="card-number">01</span>
-                        <h3>Extreme-Environment Materials</h3>
-                        <p>Refractory alloys, oxidation-resistant materials, radiation-tolerant systems, and structural materials for nuclear and high-temperature service.</p>
-                    </article>
-                    <article class="card">
-                        <span class="card-number">02</span>
-                        <h3>Chemical Disorder &amp; Phase Stability</h3>
-                        <p>High-entropy materials, short-range order, amorphization, competing crystal structures, and entropy-mediated phase selection.</p>
-                    </article>
-                    <article class="card">
-                        <span class="card-number">03</span>
-                        <h3>Phonons &amp; Thermal Transport</h3>
-                        <p>Lattice dynamics, vibrational entropy, phonon scattering, thermal conductivity, and composition–transport relationships.</p>
-                    </article>
-                    <article class="card">
-                        <span class="card-number">04</span>
-                        <h3>Data-Driven Materials Discovery</h3>
-                        <p>High-throughput computation, interpretable machine learning, interatomic potentials, and integrated computational–experimental workflows.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
+        <section class="section-block alt" aria-labelledby="research-glance-title"><div class="section-inner"><div class="section-heading"><p class="eyebrow">Research at a glance</p><h2 id="research-glance-title">Research areas</h2></div><div class="card-grid four">
+          <article class="card"><span class="card-number">01</span><h3>Extreme-Environment Materials</h3><p>Refractory alloys, oxidation-resistant materials, radiation effects, and structural materials for nuclear and high-temperature environments.</p></article>
+          <article class="card"><span class="card-number">02</span><h3>Chemical Disorder &amp; Interfaces</h3><p>Short-range order, segregation, amorphization, grain boundaries, complexions, and interstitial–solute interactions.</p></article>
+          <article class="card"><span class="card-number">03</span><h3>Lattice Dynamics &amp; Transport</h3><p>Phonons, vibrational stability, diffusion, thermal transport, and composition-dependent lattice dynamics.</p></article>
+          <article class="card"><span class="card-number">04</span><h3>Computational Materials Design</h3><p>DFT, molecular dynamics, machine-learning interatomic potentials, CALPHAD, and computational–experimental alloy design.</p></article>
+        </div></div></section>
 
-        <section class="section-block lab-feature" aria-labelledby="lab-title">
-            <div class="section-inner feature-split">
-                <div>
-                    <p class="eyebrow">Research group</p>
-                    <h2 id="lab-title">Alloy Theory Laboratory</h2>
-                    <p>Based at the University of Wyoming, the laboratory studies how chemistry, disorder, defects, vibrations, and processing govern materials performance. We connect alloy theory with data science, synthesis, and characterization.</p>
-                    <div class="button-row">
-                        <a class="button" href="research.html">Explore the Research</a>
-                        <a class="button secondary" href="team.html">Meet the Team</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <h3>Current interests</h3>
-                    <ul>
-                        <li>Alloy design for nuclear and high-temperature environments</li>
-                        <li>Chemical disorder and short-range order</li>
-                        <li>Phonon transport and lattice dynamics</li>
-                        <li>Computational–experimental materials discovery</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+        <section class="section-block lab-feature" aria-labelledby="lab-title"><div class="section-inner feature-split"><div><p class="eyebrow">Research group</p><h2 id="lab-title">Alloy Theory Laboratory</h2><p>The Alloy Theory Laboratory studies relationships between alloy chemistry, atomic-scale structure, defects, and materials response.</p><div class="button-row"><a class="button" href="research.html">Explore the Research</a><a class="button secondary" href="team.html">Meet the Team</a></div></div><div class="card"><h3>Current interests</h3><ul><li>Refractory alloys and oxidation</li><li>Radiation effects and defect evolution</li><li>Chemical disorder, segregation, and amorphization</li><li>Interstitial–solute interactions</li><li>Phonons, diffusion, and thermal transport</li></ul></div></div></section>
 
-        <section class="section-block" aria-labelledby="selected-work-title">
-            <div class="section-inner">
-                <div class="section-heading">
-                    <p class="eyebrow">Selected work</p>
-                    <h2 id="selected-work-title">Recent research and open resources</h2>
-                </div>
-                <div class="card-grid">
-                    <article class="card image-card">
-                        <img src="GA/LCO.webp" alt="Graphical abstract from lattice-dynamics research" loading="lazy">
-                        <div class="card-body">
-                            <h3>Surface local chemical order</h3>
-                            <p>Collabrative work lead by Dr. Kim and Prof. TeYu Chien. Direct observation and atomistic interpretation of local chemical ordering in high-entropy alloy.</p>
-                            <a href="https://www.nature.com/articles/s41467-026-71170-z" target="_blank" rel="noopener noreferrer">Read in Nature Communications</a>
-                        </div>
-                    </article>
-                    <article class="card image-card">
-                        <img src="GA/GA1.jpg" alt="Phonon dispersion and thermal transport visualization" loading="lazy">
-                        <div class="card-body">
-                            <h3>Phonon engineering</h3>
-                            <p>Understanding how mass, bonding, structure, and disorder reshape vibrational dynamics and thermal transport.</p>
-                            <a href="projects.html?topic=Phonons%20%26%20Thermal%20Transport">View related publications</a>
-                        </div>
-                    </article>
-                    <article class="card image-card">
-                        <img src="GA/MagMaster.png" alt="High-throughput computation and machine-learning workflow" loading="lazy">
-                        <div class="card-body">
-                            <h3>MagMaster open dataset</h3>
-                            <p>An interactive dataset connecting high-throughput DFT calculations and machine learning for binary magnesium compounds.</p>
-                            <a href="magmaster.html">Explore MagMaster</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
+        <section class="section-block" aria-labelledby="selected-work-title"><div class="section-inner"><div class="section-heading"><p class="eyebrow">Selected work</p><h2 id="selected-work-title">Recent research and open resources</h2></div><div class="card-grid">
+          <article class="card image-card"><img src="GA/LCO.webp" alt="Graphical abstract from local chemical order research" loading="lazy"><div class="card-body"><h3>Surface local chemical order</h3><p>Collaborative work led by Dr. Kim and Prof. TeYu Chien on direct observation and atomistic interpretation of local chemical ordering in a high-entropy alloy.</p><a href="https://www.nature.com/articles/s41467-026-71170-z" target="_blank" rel="noopener noreferrer">Read in Nature Communications</a></div></article>
+          <article class="card image-card"><img src="GA/GA1.jpg" alt="Phonon dispersion and thermal transport visualization" loading="lazy"><div class="card-body"><h3>Phonon engineering</h3><p>How mass, bonding, structure, and disorder reshape vibrational dynamics and thermal transport.</p><a href="projects.html?topic=Phonons%20%26%20Thermal%20Transport">View related publications</a></div></article>
+          <article class="card image-card"><img src="GA/MagMaster.png" alt="High-throughput computation and machine-learning workflow" loading="lazy"><div class="card-body"><h3>MagMaster open dataset</h3><p>An interactive dataset connecting high-throughput DFT calculations and machine learning for binary magnesium compounds.</p><a href="magmaster.html">Explore MagMaster</a></div></article>
+        </div></div></section>
 
-        <section class="section-block alt" aria-labelledby="journey-title">
-            <div class="section-inner">
-                <div class="section-heading">
-                    <p class="eyebrow">Professional journey</p>
-                </div>
-                <div class="card-grid four">
-                    <article class="card"><h3>University of Wyoming</h3><p>Assistant Professor, Mechanical Engineering and School of Energy Resources<br>2026–present</p></article>
-                    <article class="card"><h3>Johns Hopkins University</h3><p>Postdoctoral Fellow, Hopkins Extreme Materials Institute<br>2024–2026</p></article>
-                    <article class="card"><h3>Ames National Laboratory</h3><p>Visiting Scientist, Materials Sciences and Engineering<br>2023–2024</p></article>
-                    <article class="card"><h3>NASA Ames Research Center</h3><p>Materials Scientist/Engineer, Thermal Protection Materials Branch<br>2022</p></article>
-                </div>
-            </div>
-        </section>
+        <section class="section-block alt" aria-labelledby="journey-title"><div class="section-inner"><div class="section-heading"><p class="eyebrow">Professional journey</p></div><div class="card-grid four"><article class="card"><h3>University of Wyoming</h3><p>Assistant Professor, Mechanical Engineering<br>2026–present</p></article><article class="card"><h3>Johns Hopkins University</h3><p>Postdoctoral Fellow, Hopkins Extreme Materials Institute<br>2024–2026</p></article><article class="card"><h3>Ames National Laboratory</h3><p>Visiting Scientist, Materials Sciences and Engineering<br>2023–2024</p></article><article class="card"><h3>NASA Ames Research Center</h3><p>Materials Scientist/Engineer, Thermal Protection Materials Branch<br>2022</p></article></div></div></section>
     </main>
-
     <div data-site-footer></div>
     <script src="site.js"></script>
 </body>
